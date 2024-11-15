@@ -1,8 +1,11 @@
-import Fretboard from './components/Fretboard/Fretboard';
+import React, { useState } from 'react'
+import Fretboard from './components/Fretboard/Fretboard'
 
 export default function Home() {
+
   const frets = 12
   const tuning = ['e', 'a', 'd', 'g', 'b', 'e']
+
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
