@@ -12,7 +12,7 @@ const Fretboard = ({ frets, tuning }: Props) => {
         const chromaticScale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
         const startingNoteIndex = chromaticScale.indexOf(startingNote.toUpperCase())
 
-        return Array.from({ length }, (_, i) => chromaticScale[(startingNoteIndex + i) % chromaticScale.length])
+        return Array.from({ length }, (_, i) => chromaticScale[(startingNoteIndex + i + 1) % chromaticScale.length])
     }
 
     const stringNotes = tuning.map((note) => {
@@ -40,7 +40,7 @@ const Fretboard = ({ frets, tuning }: Props) => {
                     })
                 }
             </div>
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col-reverse">
                 {
                     stringNotes.map((notes, index) => {
                         return (
@@ -61,24 +61,6 @@ const Fretboard = ({ frets, tuning }: Props) => {
                                 }
                             </div>
                         )
-                        // return (
-                        //     <div key={index} className={`${styles.fret} w-1/12 flex flex-col-reverse gap-2 border-l-2 border-white`}>
-                        //         {
-                        //             strings.map((string, index) => {
-                        //                 return (
-                        //                     <div key={`${fret}-${index}`} className="relative flex items-center justify-center border-white">
-                        //                         <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-1 bg-white"></span>
-                        //                         <div className="relative flex p-3 py-1 rounded-[100%] bg-slate-800">
-                        //                             <span className="text-white">
-                        //                                 {string}
-                        //                             </span>
-                        //                         </div>
-                        //                     </div>
-                        //                 )
-                        //             })
-                        //         }
-                        //     </div>
-                        // )
                     })
                 }
             </div>
