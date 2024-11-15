@@ -1,0 +1,15 @@
+
+.fret {
+  display: flex;
+  & > div {
+    &:first-child {
+    //   @apply pt-2;  
+    //   border-top: 3px solid white;
+    }
+
+    &:last-child {
+    //   @apply pb-2;  
+    //   border-bottom: 3px solid white;
+    }
+  }
+}
