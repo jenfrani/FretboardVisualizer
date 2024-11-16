@@ -27,11 +27,9 @@ const Fretboard = ({ frets, tuning }: Props) => {
         setSelectedKey(note)
     }
 
-    const handleVisibleNotes = (note: string) => {
-        setVisibleNotes(visibleNotes.includes(note) ? visibleNotes.filter((n) => n !== note) : [...visibleNotes, note])
+    const handleVisibleNotes = (notes: string[]) => {
+        setVisibleNotes(notes)
     }
-
-    console.log(visibleNotes)
 
     return (
         <div className="w-full flex flex-col gap-4">
