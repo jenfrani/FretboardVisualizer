@@ -33,7 +33,7 @@ const Fretboard = ({ frets, tuning }: Props) => {
 
     return (
         <div className="w-full flex flex-col gap-4">
-            <Options onKeySelect={handleNoteSelect} onIntervalSelect={handleVisibleNotes}/>
+            <Options onKeySelect={handleNoteSelect} onIntervalSelect={handleVisibleNotes} />
             <div className='w-full flex flex-row'>
                 <div className="flex flex-col-reverse justify-end">
                     {
@@ -73,13 +73,22 @@ const Fretboard = ({ frets, tuning }: Props) => {
                                 <div key={index} className="flex flex-row grow">
                                     {
                                         notes.map((note, index) => {
-                                            // check if there's a selected key, and if the note is the same as the selected key or if the note is in the visible notes
                                             const isVisible = (selectedKey == '') || (note === selectedKey) || visibleNotes.includes(note)
+                                            const opacity = isVisible ? '' : 'opacity-20'
+                                            let backgroundColor = 'bg-slate-800'
+                                            if (visibleNotes.includes(note)) {
+                                                if (visibleNotes.indexOf(note) === 0) {
+                                                    backgroundColor = 'bg-blue-600'
+                                                }
+                                                else if (visibleNotes.indexOf(note) === 1) {
+                                                    backgroundColor = 'bg-green-700'
+                                                }
+                                            }
                                             return (
                                                 <div key={`${note}-${index}`} className="note relative flex items-center justify-center grow shrink border-l py-2">
                                                     <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-slate-200"></span>
 
-                                                    <div className={`relative w-6 h-6 flex items-center justify-center p-3 py-1 rounded-[100%] bg-slate-800 ${isVisible ? '' : 'opacity-20'}`}>
+                                                    <div className={`relative w-6 h-6 flex items-center justify-center p-3 py-1 rounded-[100%] bg-slate-800 ${opacity} ${backgroundColor}`}>
                                                         {
                                                             <div className="text-white text-[10px]">
                                                                 {note}
