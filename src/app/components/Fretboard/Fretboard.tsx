@@ -88,7 +88,7 @@ const Fretboard = ({ frets, tuning }: Props) => {
                                                 <div key={`${note}-${index}`} className="note relative flex items-center justify-center grow shrink border-l py-2">
                                                     <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-slate-200"></span>
 
-                                                    <div className={`relative w-6 h-6 flex items-center justify-center p-3 py-1 rounded-[100%] bg-slate-800 ${opacity} ${backgroundColor}`}>
+                                                    <div className={`relative w-6 h-6 flex items-center justify-center p-3 py-1 rounded-[100%] ${opacity} ${backgroundColor}`}>
                                                         {
                                                             <div className="text-white text-[10px]">
                                                                 {note}
