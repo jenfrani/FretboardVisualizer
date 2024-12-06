@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import styles from './Fretboard.module.scss'
 import Options from '../Options/Options'
 
 type Props = {
@@ -39,7 +38,7 @@ const Fretboard = ({ frets, tuning }: Props) => {
                     {
                         tuning.map((note, index) => {
                             return (
-                                <div key={`${note}-${index}`} className={`${styles.fret} w-1/12 flex flex-col gap-2 border-l border-white`}>
+                                <div key={`${note}-${index}`} className={`w-1/12 flex flex-col gap-2 border-l border-white`}>
                                     <div className="relative flex items-center justify-center border-white py-2">
                                         <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-1 bg-white"></span>
                                         <div className="relative w-6 h-6 flex items-center justify-center p-3 py-1 rounded-[100%] bg-slate-800">
