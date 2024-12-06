@@ -4,9 +4,6 @@ import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -50,7 +47,7 @@ const Options = ({ onKeySelect: onKeySelect, onIntervalSelect: onIntervalSelect 
     setOptions({ ...options, selectedKey: note, visibleNotes: newVisibleNotes })
   }
 
-  const sharpButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const sharpButtonClick = () => {
     const selectedKey = options.selectedKey
     if (selectedKey) {
       if (selectedKey == 'E' || selectedKey == 'B') {

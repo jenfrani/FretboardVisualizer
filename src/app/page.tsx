@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Fretboard from './components/Fretboard/Fretboard'
 
 export default function Home() {
